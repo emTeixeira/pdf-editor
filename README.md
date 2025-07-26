@@ -19,7 +19,7 @@ Este é um projeto web simples para edição de arquivos PDF. Ele permite:
 
 1. Clone o repositório:
 
-git clone https://github.com/seu-usuario/pdf-editor.git
+git clone https://github.com/emTeixeira/pdf-editor.git
 cd pdf-editor
 
 2. Crie e ative um ambiente virtual:
