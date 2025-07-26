@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download do PDF</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body class="light-mode">
+
+    <!-- Cabeçalho com logo e botão de tema -->
+    <div class="container">
+        <div class="top-bar">
+            <div class="logo">PDF Editor</div>
+            <button id="theme-button" aria-label="Alternar tema">
+                <img id="theme-icon" src="/static/images/sun.webp" alt="Alternar tema" />
+            </button>
+        </div>
+
+        <!-- Mensagem e botão de download -->
+        <div class="text-center">
+            <h2>Seu arquivo está pronto!</h2>
+            <p>Você pode fazer o download abaixo:</p>
+            <a href="{{ url_for('download_file', filename=filename) }}" class="btn" download>
+                Baixar PDF
+            </a>
+            <br /><br />
+            <a href="{{ url_for('index') }}">← Voltar para o início</a>
+        </div>
+    </div>
+
+    <!-- Script para alternar tema -->
+    <script src="/static/theme.js"></script>
+</body>
+
+</html>

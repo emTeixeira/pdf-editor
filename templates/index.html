@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Editor</title>
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body class="light-mode">
+
+    <!-- Cabeçalho com logo à esquerda e botão de tema à direita -->
+    <div class="container">
+        <div class="top-bar">
+            <div class="logo">PDF Editor</div>
+            <button id="theme-button" aria-label="Alternar tema">
+                <img id="theme-icon" src="/static/images/sun.webp" alt="Alternar tema" />
+            </button>
+        </div>
+
+        <!-- Caixas com funcionalidades -->
+        <div class="boxes-container">
+            <!-- Caixa 1: Remover senha -->
+            <div class="box">
+                <h3>Remover Senha</h3>
+                <form action="/remove-password" method="post" enctype="multipart/form-data">
+                    <input type="file" name="pdf_file" accept=".pdf" required />
+                    <input type="password" name="password" placeholder="Senha atual" required />
+                    <button type="submit">Remover</button>
+                </form>
+            </div>
+
+            <!-- Caixa 2: Adicionar senha -->
+            <div class="box">
+                <h3>Adicionar Senha</h3>
+                <form action="/add-password" method="post" enctype="multipart/form-data">
+                    <input type="file" name="pdf_file" accept=".pdf" required />
+                    <input type="password" name="password" placeholder="Nova senha" required />
+                    <button type="submit">Adicionar</button>
+                </form>
+            </div>
+
+            <!-- Caixa 3: Converter para PDF -->
+            <div class="box">
+                <h3>Converter para PDF</h3>
+                <form action="/convert-to-pdf" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" required />
+                    <button type="submit">Converter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script do tema -->
+    <script src="/static/theme.js"></script>
+</body>
+
+</html>
